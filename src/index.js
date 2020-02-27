@@ -19,7 +19,13 @@ function GitHubUsers() {
     setUsers(newUsers);
   };
 
-  return <P1 setter={setter} users={users} />;
+  return (
+    <div className="section">
+      {users.map((user, index) => (
+        <P1 setter={setter} user={user} index={index} />
+      ))}
+    </div>
+  );
 }
 
 const rootElement = document.getElementById("root");
